@@ -11,6 +11,7 @@ import org.iesalandalus.programacion.utilidades.Entrada;
 public class Consola {
 
 	private static int numeroJugador = 1;
+	private static Ficha fichaJugador1;
 
 	private Consola()
 	{
@@ -40,28 +41,40 @@ public class Consola {
 	public static Ficha elegirColorFichas()
 	{
 		Ficha ficha = Ficha.AZUL;
-		int color;
-		boolean trigger = false;
-		System.out.print("Introduce el color de la ficha: (0->Azul | 1->Verde) ");
-		do
+		if (numeroJugador==1)
 		{
-			if (trigger)
+			int color;
+			boolean trigger = false;
+			System.out.print("Introduce el color de la ficha: (0->Azul | 1->Verde) ");
+			do
 			{
-				System.out.print("Introduce un color correcto, [0->Azul] o [1->Verde]: ");
-			}
-			else
+				if (trigger)
+				{
+					System.out.print("Introduce un color correcto, [0->Azul] o [1->Verde]: ");
+				}
+				else
+				{
+					trigger = true;
+				}
+				color = Entrada.entero();
+			} while (color<0 || color>1);
+			if (color==0)
 			{
-				trigger = true;
+				ficha = Ficha.AZUL;
 			}
-			color = Entrada.entero();
-		} while (color<0 || color>1);
-		if (color==0)
-		{
-			ficha = Ficha.AZUL;
+			if (color==1)
+			{
+				ficha = Ficha.VERDE;
+			}
+			fichaJugador1 = ficha;
 		}
-		if (color==1)
+		else
 		{
-			ficha = Ficha.VERDE;
+			if (fichaJugador1==Ficha.AZUL)
+			{
+				ficha = Ficha.VERDE;
+			}
+			//No es necesario hacer la comprobación contraria ya que la ficha se inicializa azul
 		}
 		return ficha;
 	}
@@ -77,7 +90,9 @@ public class Consola {
 
 	public static Jugador leerJugadorFicha(Ficha ficha)
 	{
+		System.out.println("[DATOS JUGADOR "+numeroJugador+"]");
 		String nombre = leerNombre();
+		numeroJugador++;
 		return new Jugador(nombre, ficha);
 	}
 
