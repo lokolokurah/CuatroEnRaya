@@ -28,7 +28,7 @@ public class Casilla {
 			this.ficha = ficha;
 		}
 	}
-	
+
 	public boolean estaOcupada()
 	{
 		boolean ocupada = false;
@@ -53,8 +53,8 @@ public class Casilla {
 		System.out.println(resultado);
 		return resultado;
 	}
-	
-	
-	
-	
+
+
+
+
 }

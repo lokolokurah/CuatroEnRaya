@@ -12,7 +12,7 @@ public class CuatroEnRaya {
 	private Jugador[] jugadores;
 	public Tablero tablero;
 	private int numeroJugador = 0;
-	
+
 	public CuatroEnRaya(Jugador jugador1, Jugador jugador2) {
 		tablero = new Tablero();
 		jugadores = new Jugador[NUMERO_JUGADORES];
@@ -23,7 +23,7 @@ public class CuatroEnRaya {
 		jugadores[0] = jugador1;
 		jugadores[1] = jugador2;
 	}
-	
+
 	private boolean tirar(Jugador jugador)
 	{
 		boolean resultado = false;
@@ -43,12 +43,12 @@ public class CuatroEnRaya {
 		} while (!trigger);
 		return resultado;
 	}
-	
+
 	public void jugar()
 	{
 		if (tablero.estaLleno())
 		{
-			System.out.println("No hay más casillas libres.");
+			System.out.println("No hay mÃ¡s casillas libres.");
 			System.exit(0);
 		}
 		else
@@ -56,7 +56,7 @@ public class CuatroEnRaya {
 			System.out.println("Turno de "+jugadores[numeroJugador].getNombre());
 			if(tirar(jugadores[numeroJugador]))
 			{
-				System.out.println("¡"+jugadores[numeroJugador].getNombre()+" has ganado!");
+				System.out.println("Â¡"+jugadores[numeroJugador].getNombre()+" has ganado!");
 				System.exit(0);
 			}
 			else
@@ -75,6 +75,6 @@ public class CuatroEnRaya {
 		}
 		jugar();
 	}
-	
-	
+
+
 }

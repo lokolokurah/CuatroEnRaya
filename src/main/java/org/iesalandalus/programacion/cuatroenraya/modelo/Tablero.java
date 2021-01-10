@@ -8,7 +8,7 @@ public class Tablero {
 	public static final int FILAS = 6;
 	public static final int COLUMNAS = 7;
 	public static final int FICHAS_IGUALES_CONSECUTIVAS_NECESARIAS = 4; //Cuatro en raya -> 4
-	
+
 	public Tablero() {
 		casillas = new Casilla[FILAS][COLUMNAS];
 		for (int i = 0; i < FILAS; i++) {
@@ -17,7 +17,7 @@ public class Tablero {
 			}
 		}
 	}
-	
+
 	public boolean estaVacio()
 	{
 		boolean resultado = true;
@@ -31,7 +31,7 @@ public class Tablero {
 		}
 		return resultado;
 	}
-	
+
 	private boolean columnaVacia(int columna)
 	{
 		boolean resultado = true;
@@ -44,7 +44,7 @@ public class Tablero {
 		}
 		return resultado;
 	}
-	
+
 	public boolean estaLleno()
 	{
 		boolean resultado = true;
@@ -58,7 +58,7 @@ public class Tablero {
 		}
 		return resultado;
 	}
-	
+
 	private boolean columnaLlena(int columna)
 	{
 		boolean resultado = true;
@@ -89,7 +89,7 @@ public class Tablero {
 		}
 		return resultado;
 	}
-	
+
 	private void comprobarFicha(Ficha ficha)
 	{
 		if (ficha==null)
@@ -97,7 +97,7 @@ public class Tablero {
 			throw new NullPointerException("ERROR: La ficha no puede ser nula.");
 		}
 	}
-	
+
 	private void comprobarColumna(int columna)
 	{
 		if (columna<0 || columna>=COLUMNAS)
@@ -105,7 +105,7 @@ public class Tablero {
 			throw new IllegalArgumentException("ERROR: Columna incorrecta.");
 		}
 	}
-	
+
 	private int getPrimeraFilaVacia(int columna)
 	{
 		boolean trigger = false;
@@ -120,20 +120,20 @@ public class Tablero {
 		}
 		return fila;
 	}
-	
+
 	private boolean comprobarTirada(int fila, int columna)
 	{
 		boolean resultado = false;
 		if ( comprobarHorizontal(fila, casillas[fila][columna].getFicha()) ||
-		comprobarVertical(columna, casillas[fila][columna].getFicha()) ||
-		comprobarDiagonalNE(fila, columna, casillas[fila][columna].getFicha()) ||
-		comprobarDiagonalNO(fila, columna, casillas[fila][columna].getFicha()) )
+				comprobarVertical(columna, casillas[fila][columna].getFicha()) ||
+				comprobarDiagonalNE(fila, columna, casillas[fila][columna].getFicha()) ||
+				comprobarDiagonalNO(fila, columna, casillas[fila][columna].getFicha()) )
 		{
 			resultado = true;
 		}
 		return resultado;
 	}
-	
+
 	private boolean objetivoAlcanzado(int fichasConsecutivas)
 	{
 		boolean resultado = false;
@@ -143,7 +143,7 @@ public class Tablero {
 		}
 		return resultado;
 	}
-	
+
 	private boolean comprobarHorizontal(int fila, Ficha ficha)
 	{
 		boolean resultado = false;
@@ -172,8 +172,8 @@ public class Tablero {
 		}
 		return resultado;
 	}
-	
-	
+
+
 	private boolean comprobarVertical(int columna, Ficha ficha)
 	{
 		boolean resultado = false;
@@ -202,7 +202,7 @@ public class Tablero {
 		}
 		return resultado;
 	}
-	
+
 	private boolean comprobarDiagonalNE(int fila, int columna, Ficha ficha)
 	{
 		boolean resultado = false;
@@ -239,7 +239,7 @@ public class Tablero {
 		}
 		return resultado;
 	}
-	
+
 	private boolean comprobarDiagonalNO(int fila, int columna, Ficha ficha)
 	{
 		boolean resultado = false;
@@ -276,7 +276,7 @@ public class Tablero {
 		}
 		return resultado;
 	}
-	
+
 	private int menor(int entero1, int entero2)
 	{
 		int numeroMenor = 0;

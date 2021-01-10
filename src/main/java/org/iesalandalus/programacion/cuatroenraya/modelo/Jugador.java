@@ -1,10 +1,10 @@
 package org.iesalandalus.programacion.cuatroenraya.modelo;
 
 public class Jugador {
-	
+
 	private Ficha colorFichas;
 	private String nombre;
-	
+
 	public Jugador(String nombre, Ficha colorFichas) {
 		setColorFichas(colorFichas);
 		setNombre(nombre);
@@ -36,7 +36,7 @@ public class Jugador {
 		}
 		if (nombre.trim().isEmpty())
 		{
-			throw new IllegalArgumentException("ERROR: El nombre no puede estar vacío.");
+			throw new IllegalArgumentException("ERROR: El nombre no puede estar vacÃ­o.");
 		}
 		this.nombre = nombre;
 	}
@@ -45,5 +45,5 @@ public class Jugador {
 	public String toString() {
 		return String.format("%s (%s)", nombre, colorFichas);
 	}
-	
+
 }

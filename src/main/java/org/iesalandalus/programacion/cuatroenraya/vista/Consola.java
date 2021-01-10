@@ -11,12 +11,12 @@ import org.iesalandalus.programacion.utilidades.Entrada;
 public class Consola {
 
 	private static int numeroJugador = 1;
-	
+
 	private Consola()
 	{
-		
+
 	}
-	
+
 	public static String leerNombre()
 	{
 		String nombre;
@@ -26,7 +26,7 @@ public class Consola {
 		{
 			if (trigger)
 			{
-				System.out.print("El nombre no puede estar vacío, introduce de nuevo el nombre: ");
+				System.out.print("El nombre no puede estar vacï¿½o, introduce de nuevo el nombre: ");
 			}
 			else
 			{
@@ -36,7 +36,7 @@ public class Consola {
 		} while (nombre.trim().isEmpty());
 		return nombre;
 	}
-	
+
 	public static Ficha elegirColorFichas()
 	{
 		Ficha ficha = Ficha.AZUL;
@@ -65,7 +65,7 @@ public class Consola {
 		}
 		return ficha;
 	}
-	
+
 	public static Jugador leerJugador()
 	{
 		System.out.println("[DATOS JUGADOR "+numeroJugador+"]");
@@ -74,13 +74,13 @@ public class Consola {
 		numeroJugador++;
 		return new Jugador (nombre, ficha);
 	}
-	
+
 	public static Jugador leerJugadorFicha(Ficha ficha)
 	{
 		String nombre = leerNombre();
 		return new Jugador(nombre, ficha);
 	}
-	
+
 	public static int leerColumna(Jugador jugador)
 	{
 		int columna;
@@ -100,5 +100,5 @@ public class Consola {
 		} while (columna<0 || columna>=Tablero.COLUMNAS);
 		return columna;
 	}
-	
+
 }
